@@ -1,0 +1,5 @@
+upstream backend {
+ server container1:8484;
+ server container2:8484;
+ }
+

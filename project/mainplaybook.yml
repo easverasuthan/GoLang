@@ -1,0 +1,45 @@
+---
+- hosts: all
+  tasks:
+    - name: installing wget in centos
+      action: yum name='wget' state=installed
+
+    - name: Intalling Sudo
+      action: yum name='sudo' state=installed
+    
+    - name: Installing git
+      action: yum name='git' state=installed
+
+    - name: Intalling go using wget
+      get_url:
+        url: https://dl.google.com/go/go1.13.linux-amd64.tar.gz
+        dest: /root/
+
+    - name: Verifying the installation
+      shell: sha256sum /root/go1.13.linux-amd64.tar.gz
+
+    - name: Extarcting the tar file
+      shell: sudo tar -C /usr/local -xzf /root/go1.13.linux-amd64.tar.gz
+
+    - name: Setting environment variables
+      shell: echo 'export PATH=$PATH:/usr/local/go/bin' >> /etc/bashrc
+
+    - name: Source bash file
+      shell: source /etc/bashrc
+
+    - name: Creates directory
+      file:
+        path: /opt/src/godocker
+        state: directory
+
+    - name: Downloading go file
+      shell: cd /opt/src/godocker && git clone https://github.com/easverasuthan/GoLang.git
+
+
+    - name: Building Go files
+      shell: runuser -l root -c 'cd /opt/src/godocker/GoLang && go build'
+
+
+    - name: Starting go Application
+      shell: runuser -l root -c 'cd /opt/src/godocker/GoLang && ./GoLang &'
+
