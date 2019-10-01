@@ -8,8 +8,8 @@ those containers. Then via `Nginx`, it loadbalances the requests between the con
 **##Prerequisites**
 
 Launch a centos machine in any public cloud provider(preferred - `AWS`) and execute 
-  	sudo su
-    	Git clone https://github.com/easverasuthan/GoLang.git 
+  	* sudo su
+    	* Git clone https://github.com/easverasuthan/GoLang.git 
 
 **##Steps for running the script**
 
@@ -17,9 +17,9 @@ Launch a centos machine in any public cloud provider(preferred - `AWS`) and exec
 
 2. Copy the directory project to `/opt/` and execute the below commands.
 	
- 	cp -r project /opt/
- 	cd  /opt/
- 	sh mainscript.sh
+ 	* cp -r project /opt/
+ 	* cd  /opt/
+ 	* sh mainscript.sh
 
 3. Once the script execution is completed, do open port `80` in the inbound of the machine.
 
