@@ -10,7 +10,7 @@ those containers. Then via `Nginx`, it loadbalances the requests between the con
 Launch a centos machine in any public cloud provider(preferred - `AWS`) and execute 
 
   	* sudo su
-        * Git clone https://github.com/easverasuthan/GoLang.git 
+    * Git clone https://github.com/easverasuthan/GoLang.git 
 
 **##Steps for running the script**
 
