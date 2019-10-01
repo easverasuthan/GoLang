@@ -1,9 +1,5 @@
 #Table of Contents 
 
-**Summary
-Prerequisites
-Steps for running the script**
-
 **##Summary**
 
 This project installs `ansible`, `docker` in our cloud machine, launches two `docker` containers and deploys sample Golang application in 
